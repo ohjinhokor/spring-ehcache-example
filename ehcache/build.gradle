@@ -6,7 +6,7 @@ plugins {
 
 group = 'example'
 version = '0.0.1-SNAPSHOT'
-sourceCompatibility = '17'
+sourceCompatibility = '11'
 
 configurations {
 	compileOnly {
@@ -24,6 +24,11 @@ dependencies {
 	runtimeOnly 'mysql:mysql-connector-java'
 	annotationProcessor 'org.projectlombok:lombok'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+	// ehcache 설정
+	implementation 'org.springframework.boot:spring-boot-starter-cache'
+	implementation group: 'net.sf.ehcache', name: 'ehcache', version: '2.10.6'
+
 }
 
 tasks.named('test') {
